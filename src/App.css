@@ -25,13 +25,7 @@ body {
   grid-template-rows: 230px 100px 1fr 1fr 1fr;
   grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow other-line" ;
 }
-.character-image-container {
-  grid-area: avatar;
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .social a {
   text-decoration: none;
 }
@@ -96,13 +90,7 @@ body {
   /* border: 1px solid red; */
 }
 
-.character-name-container {
-  /* border: 1px solid blue; */
-  display: flex;
-  align-items: center;
-  grid-area: character-name;
-  /* padding-inline-start: 1em; */
-}
+
 
 .character-description-container {
   grid-area: character-description;
