@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import Character from './Character'
 import CharacterName from './Character-name'
+import CharacterImage from './Character-image'
 import API from './Api'
 
 const api = new API()
@@ -45,6 +46,7 @@ function App() {
       <a href="#">Name</a>
     </div>
     <CharacterName name={character.name} />
+    <CharacterImage image={character.image} name={Character.name} />
     <div id="character-name-container" className="character-name-container">
 
     </div>
