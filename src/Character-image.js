@@ -7,6 +7,9 @@ const CharacterImageStyled = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 1024px) {
+        
+    }
 `
 
 function CharacterImage({image, name}) {
