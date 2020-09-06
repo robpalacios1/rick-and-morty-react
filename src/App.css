@@ -92,9 +92,7 @@ body {
 
 
 
-.character-description-container {
-  grid-area: character-description;
-}
+
 
 /* .navigation {
   transform: rotate(180deg);
