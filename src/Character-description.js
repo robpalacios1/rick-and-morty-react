@@ -3,6 +3,16 @@ import styled from 'styled-components'
 
 const CharacterDescriptionStyled = styled.div `
     grid-area: character-description;
+    .character-label {
+        background: #685128;
+        padding: 1em;
+        color: white;
+        border-radius: 10px;
+        text-align: left;
+        font-size: 25px;
+        font-weight: 400;
+        /* display: inline-flex; */
+    }
 `
 
 function CharacterDescription({gender, species, status}) {
