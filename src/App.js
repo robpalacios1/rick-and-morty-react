@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import Character from './Character'
+import CharacterName from './Character-name'
+import API from './Api'
+
+const api = new API()
 
 function App() {
+  const [character, setCharacter] = useState({})
+    useEffect(() => {
+        async function getCharacter() {
+            setCharacter(await api.getCharacter(1))
+            //const character =
+            //console.log(character)
+        }
+        getCharacter()
+    }, [])
   return (
     <div className="App">
+      <Character />
         <div className="placeholder-container">
     <h1 id="character-name-placeholder" className="character-name-placeholder"></h1>
   </div>
@@ -29,6 +44,7 @@ function App() {
     <div className="navigation name">
       <a href="#">Name</a>
     </div>
+    <CharacterName name={character.name} />
     <div id="character-name-container" className="character-name-container">
 
     </div>
