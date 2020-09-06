@@ -3,6 +3,7 @@ import './App.css';
 import Character from './Character'
 import CharacterName from './Character-name'
 import CharacterImage from './Character-image'
+import CharacterDescription from './Character-description'
 import API from './Api'
 
 const api = new API()
@@ -47,20 +48,14 @@ function App() {
     </div>
     <CharacterName name={character.name} />
     <CharacterImage image={character.image} name={Character.name} />
-    <div id="character-name-container" className="character-name-container">
 
-    </div>
 
-    <div id="character-image-container" className="character-image-container">
-    </div>
     <div className="navigation about">
       <a href="#">About</a>
     </div>
 
-
-    <div id="character-description-container" className="character-description-container">
-
-    </div>
+    <CharacterDescription gender={character.gender} species={character.species} status={character.status}/>
+   
     <span className="asset bottom">
       <span className="line"></span>
       <span className="dot"></span>
