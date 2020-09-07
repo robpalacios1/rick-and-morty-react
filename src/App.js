@@ -6,6 +6,7 @@ import CharacterImage from './Character-image'
 import CharacterDescription from './Character-description'
 import CharacterPlaceHolder from './Character-placeholder'
 import Layout from './Layout'
+import Next from './Next'
 import API from './Api'
 
 const api = new API()
@@ -21,15 +22,16 @@ function App() {
         getCharacter()
     }, [])
   return (
-    <div className="App">
+    <>
       {/*<Character />*/}
       <CharacterPlaceHolder name={character.name}/>
       <Layout
+        next={<Next />}
         name={<CharacterName name={character.name} />}
         image={<CharacterImage image={character.image} name={character.name} />}
         description={<CharacterDescription gender={character.gender} species={character.species} status={character.status}/>}
       />
-    </div>
+    </>
   );
 }
 
