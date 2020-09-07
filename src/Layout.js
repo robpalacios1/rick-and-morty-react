@@ -21,11 +21,11 @@ const LayoutStyled = styled.div `
     }
     .grid-next-area {
         grid-area: arrow;
-        
+        display: flex;
     }
 
     @media screen and (max-width: 1024px) {
-        .character-name-area {
+        .grid-name-area {
             margin-top: 1em;
             justify-content: center;
         }
