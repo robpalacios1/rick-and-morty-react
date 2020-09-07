@@ -29,14 +29,7 @@ body {
 .social a {
   text-decoration: none;
 }
-.arrow {
-  grid-area: arrow;
-  cursor: pointer;
-  /* border: 1px solid red; */
-  background-image: url('/images/arrow.svg');
-  background-repeat: no-repeat;
-  background-position: left  bottom ;
-}
+
 .learn-more {
   grid-area: learn-more;
   /* border: 1px solid red; */
@@ -144,11 +137,7 @@ body {
 .character {
   text-align: center;
 }
-.character-image {
-  max-width: 100%;
-  /* width: auto; */
-  border-radius: 50%;
-}
+
 
 
 
