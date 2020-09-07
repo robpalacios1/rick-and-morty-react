@@ -2,9 +2,37 @@ import React from 'react'
 import styled from 'styled-components'
 
 const LayoutStyled = styled.div `
+    .grid-name-area {
+        display: flex;
+        align-items: center;
+        grid-area: character-name;
+    }
+
+    .grid-description-area {
+        grid-area: character-description
+    }
+
+    .grid-image-area {
+        grid-area: avatar;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .grid-next-area {
+        grid-area: arrow;
+        
+    }
+
+    @media screen and (max-width: 1024px) {
+        .character-name-area {
+            margin-top: 1em;
+            justify-content: center;
+        }
+    }
 `
 
-function Layout({ name, image, description }) {
+function Layout({ name, image, description, next }) {
     return (
         <LayoutStyled>
             <div className="grid">
@@ -29,19 +57,21 @@ function Layout({ name, image, description }) {
     <div className="navigation name">
       <a href="#">Name</a>
     </div>
-    {name}
-    {image}
-    {/*<Name /> */}
-    {/*<CharacterName name={character.name} />*/}
-    {/*<CharacterImage image={character.image} name={Character.name} />*/}
+    <div className="grid-name-area">
+        {name}
+    </div>
+    <div className="grid-image-area">
+        {image}
+    </div>
 
 
     <div className="navigation about">
       <a href="#">About</a>
     </div>
+    <div className="grid-description-area">
         {description}
-    {/*<CharacterDescription gender={character.gender} species={character.species} status={character.status}/>*/}
-   
+    </div>
+
     <span className="asset bottom">
       <span className="line"></span>
       <span className="dot"></span>
@@ -53,9 +83,9 @@ function Layout({ name, image, description }) {
     <div className="learn-more">
       <span>learn more</span>
     </div>
-
-    <div className="arrow" id="load-next"></div>
-
+    <div className="grid-next-area">
+        {next}
+    </div>
   </div>
         </LayoutStyled>
     )
