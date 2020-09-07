@@ -2,7 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SocialStyled = styled.div`
-
+    @media screen and (max-width: 1024px) {
+        a   {
+            text-decoration: none;
+        }
+        a   {
+            margin-left: 2em;
+        }
+        a:first-child {
+            margin-left: 0;
+        }
+    }
 `
 function Social() {
     return (
