@@ -10,6 +10,7 @@ import Layout from './Layout'
 import Next from './Next'
 import api from './Api'
 import CharacterContext from './Character-context'
+import GlobalStyle from './Global-style'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       character,
       setCharacter
     }}>
-      {/*<Character />*/}
+      <GlobalStyle />
       <CharacterPlaceHolder name={character.name}/>
       <Layout
         next={<Next />}
