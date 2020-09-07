@@ -190,11 +190,7 @@ body {
     display: none;
     /* padding-inline-start: 1em; */
   }
-  .arrow {
-    user-select: none;
-    height: 50px;
-    background-position: center;
-  }
+  
   .character-image-container img{
     /* display: none; */
   }

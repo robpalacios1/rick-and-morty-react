@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 //import Character from './Character'
 import CharacterName from './Character-name'
@@ -7,9 +7,9 @@ import CharacterDescription from './Character-description'
 import CharacterPlaceHolder from './Character-placeholder'
 import Layout from './Layout'
 import Next from './Next'
-import API from './Api'
+import api from './Api'
+import CharacterContext from './Character-context'
 
-const api = new API()
 
 function App() {
   const [character, setCharacter] = useState({})
@@ -22,7 +22,10 @@ function App() {
         getCharacter()
     }, [])
   return (
-    <>
+    <CharacterContext.Provider value={{
+      character,
+      setCharacter
+    }}>
       {/*<Character />*/}
       <CharacterPlaceHolder name={character.name}/>
       <Layout
@@ -31,7 +34,7 @@ function App() {
         image={<CharacterImage image={character.image} name={character.name} />}
         description={<CharacterDescription gender={character.gender} species={character.species} status={character.status}/>}
       />
-    </>
+    </CharacterContext.Provider>
   );
 }
 
