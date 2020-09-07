@@ -1,86 +1,168 @@
 import React from 'react'
 import styled from 'styled-components'
 import Social from './Social'
+import Logo from './Logo'
+import Dot from './Dot'
+import Line from './Line'
+import LearnMore from './Learn-more'
+import NavigationItem from './Navigation-item'
 
 const LayoutStyled = styled.div `
-    .grid-name-area {
-        display: flex;
-        align-items: center;
-        grid-area: character-name;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  height: calc(100vh - 8em);
+  padding: 4em;
+  grid-column-gap: 8em;
+  grid-template-columns: 50px 1fr 1fr 200px;
+  grid-template-rows: 230px 100px 1fr 1fr 1fr;
+  grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-bottom learn-more arrow other-line" ;
+
+  .name-area {
+    display: flex;
+    align-items: center;
+    grid-area: character-name;
+  }
+
+  .description-area {
+    grid-area: character-description
+  }
+
+  .image-area {
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .next-area {
+    grid-area: arrow;
+    display: flex;
+  }
+
+  .social-area {
+    grid-area: social;
+  }
+
+  .logo-area {
+    grid-area: logo;
+  }
+
+  .learn-more-area {
+    grid-area: learn-more;
+  }
+
+  .vertical-align {
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  }
+
+  .asset-top-area {
+    grid-area: asset-top;
+  }
+
+  .asset.bottom-area {
+    grid-area: asset-bottom;
+    justify-content: flex-end;
+  }
+
+  .navigation-area {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    &.name {
+      grid-area: name;
+    }
+    &.about {
+      grid-area: about;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    column-gap: 2em;
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+    padding: 2em 0;
+    width: calc(100vw - 2em);
+    margin: 0 auto;
+    column-gap: 1em;
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "logo logo logo" "name avatar avatar" "name character-name character-name" "about character-description character-description" "arrow arrow arrow" "social social social";
+
+    .name-area {
+      margin-top: 1em;
+      justify-content: center;
     }
 
-    .grid-description-area {
-        grid-area: character-description
+    .social-area {
+      text-align: center;
+      margin-top: 2em;
     }
 
-    .grid-image-area {
-        grid-area: avatar;
-        /* border: 1px solid red; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .grid-next-area {
-        grid-area: arrow;
-        display: flex;
+    .vertical-align {
+      display: none;
     }
 
-    @media screen and (max-width: 1024px) {
-        .grid-name-area {
-            margin-top: 1em;
-            justify-content: center;
-        }
+    .learn-more-area {
+      display: none;
     }
+  }
 `
 
 function Layout({ name, image, description, next }) {
     return (
-        <LayoutStyled>
-            <div className="grid">
-    <span className="asset top">
-      <span className="dot"></span>
-      <span className="dot"></span>
-      <span className="dot"></span>
-      <span className="line"></span>
-    </span>
-    <img className="logo" src="./images/logo@2x.png" width="280" alt="" />
-    <div className="social">
-     <Social />
-    </div>
-    <div className="navigation name">
-      <a href="#">Name</a>
-    </div>
-    <div className="grid-name-area">
+      <LayoutStyled>
+        <span className="vertical-align asset-top-area">
+          <Dot />
+          <Dot />
+          <Dot />
+          <Line />
+        </span>
+        <div className="logo-area">
+          <Logo />
+        </div>
+        <div className="social-area">
+          <Social />
+        </div>
+        <div className="navigation-area name">
+          <NavigationItem url="#" text="Name" />
+        </div>
+        <div className="name-area">
         {name}
     </div>
-    <div className="grid-image-area">
-        {image}
-    </div>
+        <div className="image-area">
+          {image}
+        </div>
 
 
-    <div className="navigation about">
-      <a href="#">About</a>
-    </div>
-    <div className="grid-description-area">
-        {description}
-    </div>
+        <div className="navigation-area about">
+          <NavigationItem url="#" text="About" />
+        </div>
 
-    <span className="asset bottom">
-      <span className="line"></span>
-      <span className="dot"></span>
-      <span className="dot"></span>
-      <span className="dot"></span>
-    </span>
+        <div className="description-area">
+          {description}
+        </div>
 
-    <div></div>
-    <div className="learn-more">
-      <span>learn more</span>
-    </div>
-    <div className="grid-next-area">
-        {next}
-    </div>
-  </div>
-        </LayoutStyled>
+        <span className="vertical-align asset asset-bottom-area">
+          <Line />
+          <Dot />
+          <Dot />
+          <Dot />
+        </span>
+
+        <div></div>
+        <div className="learn-more-area">
+          <LearnMore />
+        </div>
+        <div className="next-area">
+          {next}
+        </div>
+    </LayoutStyled>
     )
 }
 
