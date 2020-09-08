@@ -139,7 +139,6 @@ function Layout({ name, image, description, next }) {
           {image}
         </div>
 
-
         <div className="navigation-area about">
           <NavigationItem url="#" text="About" />
         </div>

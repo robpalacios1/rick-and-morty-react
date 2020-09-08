@@ -17,13 +17,13 @@ const SocialStyled = styled.div`
 function Social() {
     return (
         <SocialStyled>
-            <a href="https://instagram.com/michuyblacky" target="_blank" alt="">
+            <a href="https://instagram.com/michuyblacky" rel="noopener noreferrer" target="_blank" >
                 <img src="./images/instagram.svg" alt="" />
             </a>
-            <a href="https://facebook.com/roberto.palacios.397" target="_blank" alt="">
+            <a href="https://facebook.com/roberto.palacios.397" rel="noopener noreferrer" target="_blank">
                 <img src="./images/facebook.svg" alt="" />
             </a>
-            <a href="https://twitter.com/robpalacios11" target="_blank" alt="">
+            <a href="https://twitter.com/robpalacios11" rel="noopener noreferrer" target="_blank">
                 <img src="./images/twitter.svg" alt="" />
             </a>
         </SocialStyled>
